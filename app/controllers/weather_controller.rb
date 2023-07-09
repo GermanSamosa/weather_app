@@ -1,3 +1,4 @@
+include ActionView::Helpers::NumberHelper
 require 'json'
 
 class WeatherController < ApplicationController
@@ -8,6 +9,7 @@ class WeatherController < ApplicationController
         @date = t.strftime("%A %d %B, %Y")
 
         #Temperature
+        q = 'montreal,QC,CAN'
         lon = '45.4688'
         lat = '73.8756'
         date = '2023-07-04'
@@ -15,15 +17,17 @@ class WeatherController < ApplicationController
         units = 'metric'
         appid = ENV['API_KEY']
         
-        url = sprintf('https://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&appid=%s', lat, lon, appid)
+        url = sprintf('https://api.openweathermap.org/data/2.5/weather?appid=%s&q=%s',appid , q)
+        # url = sprintf('https://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&appid=%s', lat, lon, appid)
         response = HTTParty.get(url)
 
         if response.success?
-            # data = response.parsed_response
-            weather_data = JSON.parse(response.body)
 
-            @temp = weather_data['main']['temp']
-            @desc = weather_data['weather'][0]['description']
+            weather_data = JSON.parse(response.body)
+            tKelv = weather_data['main']['temp']
+
+            @temp = number_to_human(tKelv - 273.15)
+            @desc = weather_data['weather'][0]['description'].titleize
         else
             error_message = response.parsed_response['error']
             # error handle
