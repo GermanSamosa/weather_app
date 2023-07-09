@@ -1,17 +1,18 @@
 
 
-<div class="container backdrop-blur-md text-gray-50 mx-auto px-4 bg-gray-300 items-center text-center">
-    <div class="bg-cyan-300 p-8 content-center subpixel-antialiased">
+<div class=" bg-[url(<%= asset_path 'back.png' %>)] bg-center bg-no-repeat overscroll-y-contain min-h-screen container mx-auto px-5 bg-contain container text-gray-50 flex-col justify-center overflow-hidden text-center">
+    
+    <div class="object-top  justify-center align-center backdrop-blur-sm content-center subpixel-antialiased">
 
-        <div class="bg-slate-500">
+        <div class="container my-12 p-10">
             <div class="text-3xl">
                 <%= @date%>
             </div>
-            <div id="time" class=" text-6xl"></div>
+            <div id="time" class="text-6xl"></div>
         </div>
         
 
-        <div class="bg-gradient-to-r from-blue-500 p-8">
+        <div class="object-center my-12 p-10">
             <div class="text-8xl">
                 <%= @temp%> C
             </div>
@@ -20,9 +21,45 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="p-10 container flex justify-center align-center object-bottom p-12">
+
+        <div class="mt-12">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="6REM" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+</svg>
+        </div>
+
+        <div class="mt-12">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="6REM" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+</svg>
+        </div>
+        
+
+        <div class="mt-12">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="6REM" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+</svg>
+        </div>
+        
+
+        <div class="mt-12">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="6REM" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+</svg>
+        </div>
+        
+        
+
+
             <!--
             
+                 bg-[url(<%= asset_path 'back.png' %>)]
+
             Feels like
             Humitidy
             Gust
@@ -32,3 +69,11 @@
         </div>
     </div>
 </div>
+
+<style>
+/* .background{
+    z-index: 9999;
+    background-image: url(<%= asset_path 'back.png' %>);
+} */
+
+</style>
