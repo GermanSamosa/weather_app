@@ -76,3 +76,4 @@ gem 'dotenv', '~> 2.7', require: 'dotenv/load'
 
 # GemFile
 gem 'httparty'
+gem "tailwindcss-rails", "~> 2.0"
