@@ -3,6 +3,11 @@ require 'json'
 class WeatherController < ApplicationController
     def index
 
+        #Date
+        t = Time.now
+        @date = t.strftime("%A %d %B, %Y")
+
+        #Temperature
         lon = '45.4688'
         lat = '73.8756'
         date = '2023-07-04'
@@ -11,8 +16,6 @@ class WeatherController < ApplicationController
         appid = ENV['API_KEY']
         
         url = sprintf('https://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&appid=%s', lat, lon, appid)
-      
-        
         response = HTTParty.get(url)
 
         if response.success?
