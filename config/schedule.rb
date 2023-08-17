@@ -19,6 +19,10 @@
 
 # Learn more: http://github.com/javan/whenever
 
-# every 15.minutes do
-#     runner 'WeatherController.index'
-#   end
+ every 15.minutes do
+     runner 'WeatherController.index'
+   end
+
+every 1.minute do
+    runner 'GpuMonitoringJob.perform_now'
+  end

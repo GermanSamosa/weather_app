@@ -28,6 +28,9 @@ class WeatherController < ApplicationController
 
             @temp = number_to_human(tKelv - 273.15)
             @desc = weather_data['weather'][0]['description'].titleize
+            
+            # skip the refresh?
+            # big mistake lets see if we can find a fix aside pushing cron -> redirect_back(fallback_location: root_path)
         else
             error_message = response.parsed_response['error']
             # error handle

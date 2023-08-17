@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'weather#index'
 
+  get '/gpu_data', to: 'gpu_data#index'
+
 end
