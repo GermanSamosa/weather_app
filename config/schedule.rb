@@ -5,7 +5,8 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+# require 'rubygems'
+# set :output, "/weather_app/app/cron_log.log"
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
@@ -19,10 +20,14 @@
 
 # Learn more: http://github.com/javan/whenever
 
- every 15.minutes do
-     runner 'WeatherController.index'
-   end
 
+#  every 15.minutes do
+#      runner 'WeatherController.index'
+#    end
+
+#  every 1.minutes do
+#     runner 'GpuDataController.index'
+#  end
 every 1.minute do
-    runner 'GpuMonitoringJob.perform_now'
+    runner 'GpuMonitoringJob.perform'
   end
